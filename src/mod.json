@@ -1,0 +1,19 @@
+{
+	"ApiId" : "superhot",
+	"Name" : "Super Hot",
+	"Description" : "The floor is lava, dont touch it or you die",
+	"Authors" : [
+		"Tristan Kennedy"
+	],
+	"Contacts" : [
+		"tristan@taskinoz.com"
+	],
+	"Version" : "1.0",
+	"CustomScripts":[
+		{
+			"Path": "super_hot.nut",
+			"RunOn": "SERVER",
+			"ServerCallback": "startthething"
+		}
+	]
+}
