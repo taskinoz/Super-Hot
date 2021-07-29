@@ -3,6 +3,7 @@ global function startthething
 void function startwaiting()
 {
 	wait 2
+	ServerCommand("sv_cheats 1")
 	entity ent  = GetPlayerByIndex( 0 );
 	printt("Start Watch")
 	if ( IsValid(ent) ) {
