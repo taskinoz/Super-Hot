@@ -18,6 +18,7 @@ void function startwaiting()
 
 entity function superHot( entity ent )
 {
+	ServerCommand("setinfo superhot_debug 0")
   while (true)
   {
     if ( ent != null && IsValid(ent) && ent.IsPlayer() ){
@@ -31,15 +32,18 @@ entity function superHot( entity ent )
 				float speedstep = (speed/3.00) / 100
 				if ( speedstep >= 1) {
 					ServerCommand("host_timescale 1")
-					printt("Normal Speed")
+					if ( GetConVarInt("superhot_debug") == 1 )
+						printt("Normal Speed")
 				}
 				else if ( speedstep <= 1 && speedstep >= 0.1) {
 					ServerCommand("host_timescale "+speedstep)
-					printt("Slowmo")
+					if ( GetConVarInt("superhot_debug") == 1 )
+						printt("Slowmo")
 				}
 				else {
 					ServerCommand("host_timescale 0.1")
-					printt("Slow")
+					if ( GetConVarInt("superhot_debug") == 1 )
+						printt("Slow")
 				}
 			}
 			else
@@ -54,7 +58,6 @@ entity function superHot( entity ent )
 
     WaitFrame();
   }
-
 }
 
 void function startthething()
