@@ -6,7 +6,7 @@ A Super Hot mod for Titanfall 2
 
 ## Installation
 
-1) Download the latest `SUPERHOT.zip` from the [releases page](https://github.com/taskinoz/Dev-Mode/releases)
+1) Download the latest `SUPERHOT.zip` from the [releases page](https://github.com/taskinoz/Super-Hot/releases)
 
 2) Unzip the folder and put it in your Icepick mods folder or drag the zip file onto the Icepick launcher
 
