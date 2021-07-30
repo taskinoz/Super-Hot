@@ -2,7 +2,7 @@ global function startthething
 
 void function startwaiting()
 {
-	wait 2
+	WaitFrame()
 	ServerCommand("sv_cheats 1")
 	entity ent  = GetPlayerByIndex( 0 );
 	printt("Start Watch")
@@ -24,7 +24,8 @@ entity function superHot( entity ent )
 			if ( !ent.ContextAction_IsBusy() &&
 					 !ent.GetCinematicEventFlags() &&
 					 !ent.ContextAction_IsLeeching() &&
-					 !ent.ContextAction_IsActive() )
+					 !ent.ContextAction_IsActive() &&
+					 IsAlive( ent ) )
 		 	{
 				float speed = Length( ent.GetVelocity() )
 				float speedstep = (speed/3.00) / 100
