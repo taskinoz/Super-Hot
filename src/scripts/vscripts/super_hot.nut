@@ -42,7 +42,7 @@ bool function CheckLevelFlags(entity player)
 
 entity function superHot( entity ent )
 {
-	ServerCommand("setinfo superhot_debug 0")
+	/* ServerCommand("setinfo superhot_debug 0") */
 	//ServerCommand("setinfo superhot_mod 1")
   while (true)
   {
@@ -59,18 +59,18 @@ entity function superHot( entity ent )
 				float speedstep = (speed/3.00) / 100
 				if ( speedstep >= 1) {
 					ServerCommand("host_timescale 1")
-					if ( GetConVarInt("superhot_debug") == 1 )
-						printt("Normal Speed")
+					/* if ( GetConVarInt("superhot_debug") == 1 )
+						printt("Normal Speed") */
 				}
 				else if ( speedstep <= 1 && speedstep >= 0.1) {
 					ServerCommand("host_timescale "+speedstep)
-					if ( GetConVarInt("superhot_debug") == 1 )
-						printt("Slowmo")
+					/* if ( GetConVarInt("superhot_debug") == 1 )
+						printt("Slowmo") */
 				}
 				else {
 					ServerCommand("host_timescale 0.1")
-					if ( GetConVarInt("superhot_debug") == 1 )
-						printt("Slow")
+					/* if ( GetConVarInt("superhot_debug") == 1 )
+						printt("Slow") */
 				}
 			}
 			else
