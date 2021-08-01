@@ -28,6 +28,14 @@ bool function CheckLevelFlags(entity player)
 				flagResult = false
 			}
 		break
+		case "sp_training":
+			if ( Flag("PlayerSprinted") ) {
+				flagResult = true
+			}
+			else {
+				flagResult = false
+			}
+		break
 	}
 	return flagResult
 }
