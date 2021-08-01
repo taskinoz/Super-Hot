@@ -16,9 +16,26 @@ void function startwaiting()
 
 }
 
+bool function CheckLevelFlags(entity player)
+{
+	bool flagResult = true
+	switch ( GetMapName() ){
+		case "sp_crashsite":
+			if ((!Flag("og_final_words") && (!Flag("first_wallrun_completed") || !Flag("BuddyTitanFlyout"))) || ( Flag("og_final_words") && (Flag("first_wallrun_completed") || Flag("BuddyTitanFlyout")) ) ) {
+				flagResult = true
+			}
+			else {
+				flagResult = false
+			}
+		break
+	}
+	return flagResult
+}
+
 entity function superHot( entity ent )
 {
 	ServerCommand("setinfo superhot_debug 0")
+	//ServerCommand("setinfo superhot_mod 1")
   while (true)
   {
     if ( ent != null && IsValid(ent) && ent.IsPlayer() ){
@@ -26,6 +43,8 @@ entity function superHot( entity ent )
 					 !ent.GetCinematicEventFlags() &&
 					 !ent.ContextAction_IsLeeching() &&
 					 !ent.ContextAction_IsActive() &&
+					 !ent.IsInvulnerable() &&
+					 CheckLevelFlags(ent) &&
 					 IsAlive( ent ) )
 		 	{
 				float speed = Length( ent.GetVelocity() )
